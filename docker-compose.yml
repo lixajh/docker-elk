@@ -49,6 +49,16 @@ services:
     depends_on:
       - elasticsearch
 
+  grafana:
+      image: grafana/grafana
+      container_name: grafana
+      hostname: grafana
+      restart: always
+      ports:
+          - "3000:3000"
+      networks:
+          - elk
+
 networks:
 
   elk:
